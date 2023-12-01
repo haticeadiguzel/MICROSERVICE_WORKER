@@ -1,0 +1,20 @@
+version: "3"
+services:  
+  worker:
+    build:
+      context: .
+    container_name: microservice_worker
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_APP=worker.py
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    networks:
+      - mynetwork
+    restart: always
+
+networks:
+  mynetwork:
+    driver: bridge
