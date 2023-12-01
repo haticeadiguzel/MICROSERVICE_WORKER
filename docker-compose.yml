@@ -11,10 +11,9 @@ services:
       - FLASK_ENV=development
     volumes:
       - .:/app
-    networks:
-      - mynetwork
     restart: always
 
 networks:
-  mynetwork:
-    driver: bridge
+  default:
+    external:
+      name: microservice_network
