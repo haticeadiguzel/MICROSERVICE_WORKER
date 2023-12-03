@@ -10,10 +10,13 @@ services:
       - FLASK_APP=worker.py
       - FLASK_ENV=development
     volumes:
-      - .:/app
+      - worker_volume:/app
     restart: always
 
 networks:
   default:
     external:
       name: microservice_network
+
+volumes:
+  worker_volume: {}
