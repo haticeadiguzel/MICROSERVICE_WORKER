@@ -17,6 +17,4 @@ RUN git clone https://github.com/haticeadiguzel/MODELS.git
 
 RUN cd MODELS && python setup.py install
 
-# RUN pip install /app/MODELS/dist/models-0.0.1.tar.gz
-
-CMD [ "python", "worker.py" ]
+ENTRYPOINT [ "python", "worker.py" ]
